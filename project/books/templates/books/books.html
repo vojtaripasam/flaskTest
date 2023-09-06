@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/books_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="books-container">
+  <div class="books-table-heading">
+    <h1>Books</h1>
+    <a class="add-button" href="{{ url_for('books.add_book') }}">Add Book</a>
+  </div>
+
+  <table class="books-table">
+    <!-- Table Header Row -->
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Rating</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <!-- Table Elements (Rows) -->
+    <tbody>
+      {% for book in books %}
+        <tr>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.rating }}</td>
+          <td class="books-actions">
+            <a class="books-actions-link" href="{{ url_for('books.delete_book', id=book.id) }}">Delete</a>
+            <a class="books-actions-link" href="{{ url_for('books.edit_book', id=book.id) }}">Edit</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

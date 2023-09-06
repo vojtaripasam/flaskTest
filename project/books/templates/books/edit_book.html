@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/form_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="form-wrap">
+  <h1>Edit Book:</h1>
+
+  <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+    <div class="field">
+      <label for="bookTitle">Title</label>
+      <input
+        type="text"
+        id="bookTitle"
+        name="book_title"
+        placeholder="{{ book.title }}" />
+    </div>
+
+    <div class="field">
+      <label for="bookAuthor">Author</label>
+      <input
+        type="text"
+        id="bookAuthor"
+        name="book_author"
+        placeholder="{{ book.author }}" />
+    </div>
+
+    <div class="field">
+      <label for="bookRating">Rating</label>
+      <input
+        type="text"
+        id="bookRating"
+        name="book_rating"
+        placeholder="{{ book.rating }}" />
+    </div>
+
+    <div class="field">
+      <button type="submit">Update</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

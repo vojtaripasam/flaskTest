@@ -1,0 +1,86 @@
+/* Books List Styling
+ ********************/
+.books-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 960px;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+
+.books-table-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.books-table-heading-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 1.0rem 0.8rem;
+  overflow: hidden;
+}
+
+th {
+  padding-bottom: .8rem;
+  border-top: 2px solid #DDD;
+  border-bottom: 4px solid #DDD;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #F9F9F9;
+}
+
+tfoot td {
+  background-color: #DDD;
+}
+
+table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.books-actions {
+  display: block;
+}
+
+.books-actions-link + .books-actions-link {
+  margin-left: 0.5rem;
+}
+
+.add-button {
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 1.2em;
+  border-radius: 3px;
+  border: none;
+  margin-bottom: 0.5em;
+  text-decoration:none;
+  background-color: darkgreen;
+  color: white;
+}
+
+.add-button:hover {
+  background-color: #115402;
+  cursor: pointer;
+}
+
+.add-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.add-button:visited {
+  text-decoration:none;
+  color: white;
+}
